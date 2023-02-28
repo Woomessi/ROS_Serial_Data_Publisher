@@ -1,0 +1,2 @@
+serial_ros
+-DCMAKE_BUILD_TYPE=RelWithDebInfo -DCATKIN_DEVEL_PREFIX=/home/woomessi/projects/ROS/usart_ws/devel -DCMAKE_INSTALL_PREFIX=/home/woomessi/projects/ROS/usart_ws/install -G Unix Makefiles
