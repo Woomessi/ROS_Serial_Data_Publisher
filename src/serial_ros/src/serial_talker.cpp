@@ -69,7 +69,7 @@ int main(int argc, char** argv)
             // }
             
             /*******************************
-            ******* READLINES VERSION ******
+            ******** READLINE VERSION ******
             ********************************/
             std::string buffer;
             size_t size = 65536;

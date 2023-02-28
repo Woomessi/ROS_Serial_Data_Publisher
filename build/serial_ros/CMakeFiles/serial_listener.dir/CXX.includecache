@@ -9,6 +9,10 @@
 /home/woomessi/projects/ROS/usart_ws/src/serial_ros/src/serial_listener.cpp
 ros/ros.h
 -
+stdlib.h
+-
+string.h
+-
 sstream
 -
 iostream
