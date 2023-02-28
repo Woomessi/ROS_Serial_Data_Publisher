@@ -51,20 +51,36 @@ int main(int argc, char** argv)
     {
         //获取缓冲区内的字节数
         size_t n = sp.available();
+        // size_t n = 1;
         if(n!=0)
-        {
-            uint8_t buffer[1024];
-            std::ostringstream convert;
-            n = sp.read(buffer, n);
+        {    
+            /****************************
+            ******* READ VERSION ******
+            *****************************/
+            // uint8_t buffer[1024];
+            // std::ostringstream convert;
+
+            // n = sp.read(buffer, n);
+            // for(int i=0; i<n; i++)
+            // {
+            //     convert << buffer[i];
+            //     msg.data = convert.str();
+            //     pub.publish(msg);
+            // }
             
-            for(int i=0; i<n; i++)
-            {
-                convert << buffer[i];
-                msg.data = convert.str();
-                pub.publish(msg);
-            }
+            /*******************************
+            ******* READLINES VERSION ******
+            ********************************/
+            std::string buffer;
+            size_t size = 65536;
+            std::string eol = "\n";
+
+            n = sp.readline(buffer, size, eol);
+            msg.data = buffer;
+            pub.publish(msg);
+            
             //把数据发送回去
-            sp.write(buffer, n);
+            // sp.write(buffer, n);
         }
         loop_rate.sleep();
     }
