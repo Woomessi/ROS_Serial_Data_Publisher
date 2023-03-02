@@ -16,13 +16,13 @@ int main(int argc, char** argv)
     //创建一个serial类
     serial::Serial sp;
     //创建timeout
-    serial::Timeout to = serial::Timeout::simpleTimeout(100);
+    serial::Timeout timeout = serial::Timeout::simpleTimeout(100);
     //设置要打开的串口名称
     sp.setPort("/dev/ttyUSB0");
     //设置串口通信的波特率
     sp.setBaudrate(115200);
     //串口设置timeout
-    sp.setTimeout(to);
+    sp.setTimeout(timeout);
  
     try
     {
@@ -51,7 +51,6 @@ int main(int argc, char** argv)
     {
         //获取缓冲区内的字节数
         size_t n = sp.available();
-        // size_t n = 1;
         if(n!=0)
         {    
             /****************************

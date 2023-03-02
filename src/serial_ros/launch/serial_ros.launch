@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="serial_ros" type="serial_listener" name="serial_listener" output="screen" />
+    <node pkg="serial_ros" type="serial_talker" name="serial_talker" output="screen" />
+</launch>
